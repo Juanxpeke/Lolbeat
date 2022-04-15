@@ -1,0 +1,183 @@
+.account-matches {
+    display: flex;
+    flex-direction: column;
+    min-height: inherit;
+}
+
+.matches-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-gap);
+    font-size: 1em;
+}
+
+.match-layout {
+    border-radius: var(--small-radius);
+    overflow: hidden;
+}
+
+.match-layout * {
+    font-family: Rubik, sans-serif;
+}
+
+.match-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0.8em;
+    padding: 0.6em 0.8em;
+    color: rgba(0, 0, 0, 0.8);
+    transition: 0.15s;
+    cursor: pointer;
+}
+
+.match-div:hover {
+    opacity: 80%;
+}
+
+.match-won {
+    background-color: #BCB2F1;
+}
+
+.match-lost {
+    background-color: #EA9595;
+}
+
+.match-icon-text {
+    gap: 0.5em;
+}
+
+.match-item-holder {
+    justify-content: flex-end;
+    gap: 0.2em;
+}
+
+.match-champ-img, .match-champ-shade {
+    display: block;
+    width: 3.6em;
+    height: 3.6em;
+    border-radius: 50%;
+}
+
+.match-item-img, .match-item-shade {
+    display: block;
+    width: 2em;
+    height: 2em;
+}
+
+.match-spell-img, .match-spell-shade {
+    display: block;
+    width: 2em;
+    height: 2em;
+}
+
+.match-icon {
+    display: block;
+    width: 0.8em;
+    height: 0.8em;
+}
+
+.match-shaded-img {
+    position: relative;
+}
+
+.match-champ-shade, .match-item-shade, .match-spell-shade {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.match-champ-shade {
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.6) inset, -5px -5px 10px 0 rgba(0, 0, 0, 0.6) inset;
+}
+
+.match-item-shade, .match-spell-shade {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.6) inset, 0 -1px 2px 0 rgba(0, 0, 0, 0.6) inset;
+}
+
+.match-champ-shade, .match-item-shade, .match-spell-shade {
+    pointer-events: none;
+}
+
+.match-main-data {
+    gap: 0.5em;
+    width: 5em;
+    font-size: max(1em, 0.7rem);
+}
+
+.match-secondary-data {
+    gap: 0.5em;
+    width: 5em;
+    font-size: max(1em, 0.7rem);
+}
+
+.match-items {
+
+}
+
+.match-spells {
+    gap: 0.2em;
+}
+
+.match-time-data {
+    width: 10em;
+}
+
+.more-matches {
+    height: var(--header-height);
+    margin-top: calc(1.5 * var(--medium-gap));
+    padding: 1.2rem;
+    border-radius: var(--small-radius);
+    text-align: center;
+    background-color: var(--middle-background-color);
+    color: var(--main-text-color);
+    transition: var(--fast-transition);
+    cursor: pointer;
+}
+
+.more-matches:hover {
+    background-color: var(--front-background-color);
+}
+
+@media all and (max-width: 1280px) {
+    .matches-list {
+        gap: 0.6em;
+    }
+
+    .match-div {
+        font-size: 0.75em;
+    }
+
+    .match-champ-shade, .match-item-shade, .match-spell-shade {
+        display: none;
+    }
+
+    .match-time-data {
+        display: none;
+    }
+
+    .more-matches {
+        font-size: var(--min-font-size);
+    }
+
+}
+
+@media all and (max-width: 960px) {
+    .matches-list {
+        gap: var(--min-gap);
+    }
+
+    .match-div {
+        font-size: 0.5em;
+    }
+
+    .match-items {
+        width: 5rem;
+    }
+
+    .more-matches {
+        margin-top: calc(3 * var(--min-gap));
+        border-radius: 0;
+    }
+}

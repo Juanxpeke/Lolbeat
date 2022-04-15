@@ -1,0 +1,237 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-image: url("/resources/images/lolbeat-teemo-background.png");
+    background-position: 0 0;
+    background-size: auto auto;
+    background-repeat: repeat-x;
+    animation: animatedBackground 10s linear infinite alternate;
+}
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.dark-background {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+header {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    left: 0;
+    top: 0;
+    padding: 1em 1.6em;
+    color: var(--main-text-color);
+}
+
+.title-layout {
+    text-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.title-layout:hover {
+    color: var(--main-text-hover-color);
+}
+
+.nav-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--min-font-size);
+}
+
+.nav-button-header {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6em;
+}
+
+.nav-button {
+    cursor: pointer;
+    transition: var(--fast-transition);
+}
+
+.nav-button:hover {
+    color: var(--main-text-hover-color);
+}
+
+.nav-button-dialog {
+    display: none;
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5em;
+    text-align: center;
+}
+
+.intro-layout {
+    max-width: min(30em, 90%);
+    color: var(--main-text-color);
+    text-shadow: 0 0.15rem 0.3rem rgba(0, 0, 0, 0.3);
+    transition: var(--resize-transition);
+}
+
+.search-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.4em;
+    font-size: 1rem;
+}
+
+.input-layout {
+    display: flex;
+    flex-direction: row;
+    height: 2.5em;
+    transition: var(--resize-transition);
+}
+
+.name-input {
+    width: 15em;
+    padding: 0.6em 1.2em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+    box-shadow: 0 0.15rem 0.3rem 0 rgba(0, 0, 0, 0.4) inset, 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.4);
+}
+
+.platform-select {
+    width: 5em;
+    margin-left: -0.3em;
+    padding: 0.6em 0.4em 0.6em 0.6em;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+    background-color: #e1e1e1;
+    box-shadow: 0 0.15rem 0.3rem 0 rgba(0, 0, 0, 0.4);
+    transition: var(--fast-transition);
+}
+
+.platform-select:hover, .platform-select:focus {
+    background-color: whitesmoke;
+}
+
+.go-button {
+    display: block;
+    padding: 0.6em 1.8em;
+    border-radius: 1.2em;
+    background-color: var(--button-color);
+    color: var(--main-text-color);
+    box-shadow: 0 0.15rem 0.3rem 0 rgba(0, 0, 0, 0.4);
+    transition: var(--fast-transition);
+}
+
+.go-button:hover, .go-button:focus {
+    background-color: var(--button-hover-color);
+}
+
+footer {
+    z-index: 2;
+    padding: 1.2em;
+    text-align: center;
+    font-size: var(--min-font-size);
+    color: var(--main-text-color);
+    transition: var(--resize-transition);
+}
+
+@media all and (max-width: 1280px) {
+    body {
+        animation: animatedBackground 21s linear infinite alternate;
+    }
+}
+
+@media all and (max-width: 720px) {
+    body {
+        animation: animatedBackground 32s linear infinite alternate;
+    }
+
+    header {
+        font-size: var(--min-font-size);
+    }
+
+    .nav-button-header {
+        display: none;
+    }
+
+    .nav-button-dialog {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    .nav-button {
+        width: 21em;
+        padding: 1.2em;
+        background-color: var(--front-background-color);
+    }
+
+    .nav-button:hover {
+        background-color: var(--front-background-color-hover);
+    }
+
+    .hamburger-icon {
+        display: block;
+        padding: 0.3em 0.6em;
+        border-radius: 0.25em;
+        background-color: var(--button-color);
+        box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .hamburger-icon:hover {
+        background-color: var(--button-hover-color);
+    }
+
+    .hamburger-line {
+        width: 1.2rem;
+        height: 0.15rem;
+        background-color: var(--main-text-color);
+        margin: 0.25rem 0;
+    }
+
+    .intro-layout {
+        font-size: var(--min-font-size);
+    }
+
+    .search-layout {
+        font-size: var(--min-font-size);
+    }
+
+}
+
+@media all and (min-width: 1920px) {
+    body {
+        background-size: 100% 120%;
+    }
+}

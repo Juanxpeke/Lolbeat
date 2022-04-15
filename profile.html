@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Lolbeat - Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=yes">
+    <link rel="icon" href="../../resources/images/mushroom-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/lolbeat.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <link rel="stylesheet" href="../styles/matches.css">
+    <link rel="stylesheet" href="../styles/details.css">
+    <script src="../scripts/lolbeat.js" defer></script>
+    <script src="../scripts/requests.js" defer></script>
+    <script src="../scripts/profile.js" defer></script>
+</head>
+<body>
+<header>
+    <div class="title-layout">
+        <img class="title-icon"
+             src="../resources/images/mushroom-icon.png"
+             alt="Lolbeat Icon"
+             title="Lolbeat Icon">
+        <h2><a href="../index.html">Lolbeat</a></h2>
+    </div>
+    <div class="input-layout">
+        <input class="name-input" type="text" placeholder="Username">
+        <a class="go-button" href="#">GO</a>
+    </div>
+    <div class="nav-layout">
+        <select class="platform-select">
+            <option value="br1">BR</option>
+            <option value="eun1">EUNE</option>
+            <option value="euw1">EUW</option>
+            <option value="jp1">JP</option>
+            <option value="kr">KR</option>
+            <option value="la1">LAN</option>
+            <option value="la2">LAS</option>
+            <option value="na1">NA</option>
+            <option value="oc1">OCE</option>
+            <option value="tr1">TR</option>
+            <option value="ru">RU</option>
+        </select>
+        <select class="language-select">
+            <option value="br1">ESP</option>
+            <option value="eun1">ENG</option>
+            <option value="euw1">KOR</option>
+            <option value="jp1">JAP</option>
+        </select>
+    </div>
+</header>
+<main>
+    <div class="profile-layout">
+        <img class="profile-img"
+             src="../resources/images/void-item.png"
+             alt="User not found"
+             title="User not found">
+        <div class="profile-info">
+            <h2 class="user-name">?</h2>
+            <h3 class="user-level">?</h3>
+        </div>
+    </div>
+    <div class="account-layout">
+        <div class="account-nav">
+            <button class="general-button account-nav-button">
+                General
+            </button>
+            <button class="matches-button account-nav-button">
+                Matches
+            </button>
+            <button class="ranked-button account-nav-button">
+                Ranked
+            </button>
+            <button class="champions-button account-nav-button">
+                Champions
+            </button>
+        </div>
+        <div class="account-content">
+        </div>
+    </div>
+</main>
+<footer>
+    Made by Juan Flores<br>
+    2022
+</footer>
+<template class="match-template">
+    <div class="match-layout">
+        <div class="match-div">
+            <div class="v-centered-column">
+                <div class="match-shaded-img">
+                    <img class="match-champ-img"
+                         src="../resources/images/void-item.png"
+                         alt="Unknown"
+                         title="Unknown">
+                    <div class="match-champ-shade"></div>
+                </div>
+            </div>
+            <div class="match-main-data v-centered-column">
+                <h3 class="match-kda">?/?/?</h3>
+                <h5 class="match-game-mode">Unknown</h5>
+            </div>
+            <div class="match-secondary-data v-centered-column">
+                <div class="match-icon-text v-centered-row" title="Farm">
+                    <img class="match-icon"
+                         src="../resources/images/farm-icon.png"
+                         alt="Farm">
+                    <h5 class="match-farm">?</h5>
+                </div>
+                <div class="match-icon-text v-centered-row" title="Gold">
+                    <img class="match-icon"
+                         src="../resources/images/gold-icon.png"
+                         alt="Gold">
+                    <h5 class="match-gold">?</h5>
+                </div>
+            </div>
+            <div class="match-items match-item-holder v-centered-row">
+                <div class="match-item-holder v-centered-row wrapped">
+                    <div class="match-item-holder v-centered-row">
+                        <div class="match-shaded-img">
+                            <img class="match-item-img"
+                                 src="../resources/images/void-item.png"
+                                 alt="No item">
+                            <div class="match-item-shade"></div>
+                        </div>
+                        <div class="match-shaded-img">
+                            <img class="match-item-img"
+                                 src="../resources/images/void-item.png"
+                                 alt="No item">
+                            <div class="match-item-shade"></div>
+                        </div>
+                        <div class="match-shaded-img">
+                            <img class="match-item-img"
+                                 src="../resources/images/void-item.png"
+                                 alt="No item">
+                            <div class="match-item-shade"></div>
+                        </div>
+                    </div>
+                    <div class="match-item-holder v-centered-row">
+                        <div class="match-shaded-img">
+                            <img class="match-item-img"
+                                 src="../resources/images/void-item.png"
+                                 alt="No item">
+                            <div class="match-item-shade"></div>
+                        </div>
+                        <div class="match-shaded-img">
+                            <img class="match-item-img"
+                                 src="../resources/images/void-item.png"
+                                 alt="No item">
+                            <div class="match-item-shade"></div>
+                        </div>
+                        <div class="match-shaded-img">
+                            <img class="match-item-img"
+                                 src="../resources/images/void-item.png"
+                                 alt="No item">
+                            <div class="match-item-shade"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="match-shaded-img">
+                    <img class="match-item-img"
+                         src="../resources/images/void-item.png"
+                         alt="No item">
+                    <div class="match-item-shade"></div>
+                </div>
+            </div>
+            <div class="match-spells v-centered-row">
+                <div class="match-shaded-img">
+                    <img class="match-spell-img"
+                         src="../resources/images/void-item.png"
+                         alt="Spell"
+                         title="Spell">
+                    <div class="match-spell-shade"></div>
+                </div>
+                <div class="match-shaded-img">
+                    <img class="match-spell-img"
+                         src="../resources/images/void-item.png"
+                         alt="Spell"
+                         title="Spell">
+                    <div class="match-spell-shade"></div>
+                </div>
+            </div>
+            <div class="match-time-data match-icon-text v-centered-row" title="Duration and date">
+                <img class="match-icon"
+                     src="../resources/images/time-icon.png"
+                     alt="Duration and date">
+                <h5 class="match-duration-date">--:--&nbsp;&nbsp;•&nbsp;&nbsp;-/-/-</h5>
+            </div>
+            <div class="v-centered-row">
+                <h6 class="match-details-icon">&#9660;</h6>
+            </div>
+        </div>
+        <div class="details-layout details-hidden">
+            <div class="details-nav">
+                <div class="overview-button details-nav-button">
+                    Overview
+                </div>
+                <div class="charts-button details-nav-button">
+                    Charts
+                </div>
+            </div>
+            <div class="details-content">
+            </div>
+        </div>
+    </div>
+</template>
+<template class="overview-template">
+    <div class="details-overview">
+        <div class="overview-objectives">
+            <div class="overview-icon-text v-centered-row" title="Turrets Destroyed">
+                <img class="objectives-icon"
+                     src="../resources/images/turret-icon.png"
+                     alt="Turrets Destroyed">
+                <h6 class="overview-turrets ally">?</h6>
+            </div>
+            <div class="overview-icon-text v-centered-row" title="Dragons Killed">
+                <img class="objectives-icon"
+                     src="../resources/images/dragon-icon.png"
+                     alt="Dragons Killed">
+                <h6 class="overview-dragons ally">?</h6>
+            </div>
+            <div class="overview-icon-text v-centered-row" title="Barons Killed">
+                <img class="objectives-icon"
+                     src="../resources/images/baron-icon.png"
+                     alt="Barons Killed">
+                <h6 class="overview-barons ally">?</h6>
+            </div>
+            <div class="overview-icon-text v-centered-row" title="Total Kills">
+                <h6 class="overview-kills ally">?</h6>
+                <img class="objectives-big-icon"
+                     src="../resources/images/kills-icon.png"
+                     alt="Total Kills">
+                <h6 class="overview-kills enemy">?</h6>
+            </div>
+            <div class="overview-icon-text v-centered-row" title="Barons Killed">
+                <img class="objectives-icon"
+                     src="../resources/images/baron-icon.png"
+                     alt="Barons Killed">
+                <h6 class="overview-barons ally">?</h6>
+            </div>
+            <div class="overview-icon-text v-centered-row" title="Dragons Killed">
+                <img class="objectives-icon"
+                     src="../resources/images/dragon-icon.png"
+                     alt="Dragons Killed">
+                <h6 class="overview-dragons enemy">?</h6>
+            </div>
+            <div class="overview-icon-text v-centered-row" title="Turrets Destroyed">
+                <img class="objectives-icon"
+                     src="../resources/images/turret-icon.png"
+                     alt="Turrets Destroyed">
+                <h6 class="overview-turrets enemy">?</h6>
+            </div>
+        </div>
+        <div class="overview-teams">
+            <div class="team">
+            </div>
+            <div class="team">
+            </div>
+        </div>
+    </div>
+</template>
+<template class="participant-template">
+    <div class="participant">
+        <div class="v-centered-row">
+            <img class="participant-champ-img"
+                 src="../resources/images/void-item.png"
+                 alt="Unknown"
+                 title="Unknown">
+        </div>
+        <div class="participant-spells v-centered-column">
+            <img class="participant-spell-img"
+                 src="../resources/images/void-item.png"
+                 alt="Spell"
+                 title="Spell">
+            <img class="participant-spell-img"
+                 src="../resources/images/void-item.png"
+                 alt="Spell"
+                 title="Spell">
+        </div>
+        <div class="participant-main-data v-centered-column">
+            <h6 class="participant-name"><a class="participant-link" href="#">Unknown</a></h6>
+            <h6 class="participant-kda">?/?/?</h6>
+        </div>
+        <div class="participant-secondary-data v-centered-column">
+            <div class="participant-icon-text v-centered-row" title="Farm">
+                <img class="participant-icon"
+                     src="../resources/images/farm-icon.png"
+                     alt="Farm">
+                <h6 class="participant-farm">?</h6>
+            </div>
+            <div class="participant-icon-text v-centered-row" title="Gold">
+                <img class="participant-icon"
+                     src="../resources/images/gold-icon.png"
+                     alt="Gold">
+                <h6 class="participant-gold">?</h6>
+            </div>
+        </div>
+        <div class="participant-items participant-item-holder v-centered-row">
+            <div class="participant-item-holder v-centered-row wrapped">
+                <div class="participant-item-holder v-centered-row">
+                    <img class="participant-item-img"
+                         src="../resources/images/void-item.png"
+                         alt="No item">
+                    <img class="participant-item-img"
+                         src="../resources/images/void-item.png"
+                         alt="No item">
+                    <img class="participant-item-img"
+                         src="../resources/images/void-item.png"
+                         alt="No item">
+                </div>
+                <div class="participant-item-holder v-centered-row">
+                    <img class="participant-item-img"
+                         src="../resources/images/void-item.png"
+                         alt="No item">
+                    <img class="participant-item-img"
+                         src="../resources/images/void-item.png"
+                         alt="No item">
+                    <img class="participant-item-img"
+                         src="../resources/images/void-item.png"
+                         alt="No item">
+                </div>
+            </div>
+            <img class="participant-item-img"
+                 src="../resources/images/void-item.png"
+                 alt="No item">
+        </div>
+    </div>
+</template>
+<template class="charts-template">
+    <div class="details-charts">
+        <div class="charts-select-holder">
+            <select class="charts-select">
+                <option value="totalDamageDealt">Total Damage Dealt</option>
+                <option value="totalDamageDealtToChampions" selected>Total Damage Dealt (Champions)</option>
+                <option value="damageDealtToTurrets">Total Damage Dealt (Turrets)</option>
+                <option value="totalDamageTaken">Total Damage Taken</option>
+                <option value="totalHeal">Total Heal</option>
+                <option value="totalHealsOnTeammates">Total Heals (On Teammates)</option>
+                <option value="totalTimeCCDealt">Total CC Dealt (Seconds)</option>
+                <option value="visionScore">Vision Score</option>
+            </select>
+        </div>
+        <div class="charts-team">
+        </div>
+        <div class="charts-team">
+        </div>
+    </div>
+</template>
+<template class="bar-template">
+    <div class="bar">
+        <div class="bar-champ">
+            <img class="bar-champ-img"
+                 src="../resources/images/void-item.png"
+                 alt="Unknown">
+        </div>
+        <div class="bar-name-holder v-centered-column">
+            <h6 class="bar-name">?</h6>
+        </div>
+        <div class="values-holder v-centered-row">
+            <div class="progress"></div>
+            <h6 class="bar-value">?</h6>
+        </div>
+    </div>
+</template>
+</body>
+</html>

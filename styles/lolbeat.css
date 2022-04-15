@@ -1,0 +1,147 @@
+:root {
+    --header-height: 3.5rem;
+    --min-font-size: 0.85rem;
+    --small-radius: 0.2em;
+    --medium-gap: 1.2em;
+    --min-gap: 0.1em;
+    --outline-width: 2px;
+    --main-padding: 1em;
+    --resize-transition: 0.5s;
+    --fast-transition: 0.2s;
+    --main-text-color: #f5f5f5;
+    --main-text-hover-color: #c8c8c8;
+    --front-background-color: #3e23f2;
+    --front-background-color-hover: #6e7dfa;
+    --middle-background-color: #220bbd;
+    --back-background-color: #0c0445;
+    --button-color: #2d1ec8;
+    --button-hover-color: #7873ff;
+    --dark-button-color: #1e0aa5;
+    --lolbeat-light: #b6aefb;
+    --lolbeat-light-hover: #8a7df9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+a:focus, input:focus, button:focus, select:focus {
+    position: relative; /* On top of siblings */
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    font-size: max(1em, var(--min-font-size)); /* Constant as default */
+    background: none;
+    color: inherit;
+}
+
+::selection {
+    background-color: var(--lolbeat-light);
+    color: var(--back-background-color);
+}
+
+input, select {
+    font-size: max(1em, var(--min-font-size)); /* Constant as default */
+    border-style: none;
+}
+
+
+
+.v-centered-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: visible;
+}
+
+.v-centered-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    overflow: visible;
+}
+
+.hidden {
+    display: none;
+}
+
+.wrapped {
+    flex-wrap: wrap;
+}
+
+/*
+
+*/
+
+/*
+==================================
+============= LOADER =============
+==================================
+ */
+
+.lolbeat-loader {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 auto;
+    border: 0.3em solid var(--lolbeat-light);
+    border-top: 0.3em solid var(--front-background-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*
+===================================
+============ SCROLLBAR ============
+===================================
+ */
+
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--middle-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--lolbeat-light);
+    border: .25em solid var(--middle-background-color);
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--lolbeat-light-hover);
+}
+
+/* Mozilla */
+@supports (scrollbar-color: var(--lolbeat-light) var(--middle-background-color)) {
+    * {
+        scrollbar-color: var(--lolbeat-light) var(--middle-background-color);
+    }
+}
+
+

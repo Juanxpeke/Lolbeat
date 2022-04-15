@@ -1,0 +1,339 @@
+
+.details-layout {
+    display: flex;
+    flex-direction: row;
+    background-color: #d7d7d7;
+    transition: var(--resize-transition);
+}
+
+.details-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #e1e1e1;
+}
+
+.details-nav-button {
+    padding: 0.8em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.details-nav-button:hover, .details-nav-button:focus {
+    background-color: whitesmoke;
+}
+
+.details-selected-button {
+    background-color: whitesmoke;
+}
+
+.details-winner-div {
+    background-color: #d7d2f0;
+}
+
+.details-loser-div {
+    background-color: #f0bebe;
+}
+
+.details-content {
+    width: 100%;
+}
+
+/*
+==============================
+===========OVERVIEW===========
+==============================
+*/
+
+.details-overview {
+    display: flex;
+    flex-direction: column;
+}
+
+.overview-winner-text {
+    color: #3720B1;
+}
+
+.overview-loser-text {
+    color: #AA2222;
+}
+
+.overview-icon-text {
+    gap: 0.2em;
+}
+
+/*
+==========OBJECTIVES==========
+*/
+
+.overview-objectives {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.5em;
+    padding: 0.4em;
+    background-color: whitesmoke;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.objectives-icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+}
+
+.objectives-big-icon {
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+/*
+============TEAM=============
+*/
+
+.overview-teams {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e6e6e6;
+}
+
+.team {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/*
+=========PARTICIPANTS=========
+*/
+
+.participant {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0.5em;
+    padding: 0.5em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.participant-icon-text {
+    gap: 0.2em;
+}
+
+.participant-item-holder {
+    justify-content: flex-end;
+    gap: 0.1em;
+}
+
+.participant-champ-img {
+    display: block;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
+.participant-item-img {
+    display: block;
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.participant-spell-img {
+    display: block;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+}
+
+.participant-icon {
+    display: block;
+    width: 0.5em;
+    height: 0.5em;
+}
+
+.participant-spells {
+    gap: 0.2em;
+}
+
+.participant-main-data {
+    align-items: center;
+    gap: 0.2em;
+    width: 5em;
+    font-size: max(1em, 0.7rem);
+}
+
+.participant-name {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.participant-name:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.participant-secondary-data {
+    align-items: center;
+    gap: 0.2em;
+    width: 3.5em;
+    font-size: max(1em, 0.7rem);
+}
+
+.participant-items {
+}
+
+/*
+==============================
+============CHARTS============
+==============================
+*/
+
+.details-charts {
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+.charts-select-holder {
+    padding: 0.4em;
+    text-align: center;
+}
+
+.charts-select {
+    font-size: 1em;
+}
+
+/*
+=============TEAM=============
+*/
+
+.charts-team {
+
+}
+
+/*
+=============BARS=============
+*/
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.4em 0.8em;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.bar-champ-img {
+    display: block;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+}
+
+.bar-name-holder {
+    align-items: center;
+    width: 7em;
+    font-size: max(1em, 0.7rem);
+}
+
+.bar-name {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.bar-name:hover {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.values-holder {
+    gap: 0.2em;
+    width: 85%;
+}
+
+.progress {
+    height: 0.6em;
+    border-radius: 0.3em;
+    transition: 1s;
+}
+
+.winner-progress {
+    background-color: #563fcc;
+}
+
+.loser-progress {
+    background-color: #cb4545;
+}
+
+.bar-value {
+    max-width: 5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*
+==============================
+============EXTRAS============
+==============================
+ */
+
+.details-hidden {
+    display: none;
+}
+
+.highlighted {
+    background-image: url("/resources/images/horizontal-gradient.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+@media all and (max-width: 1280px) {
+
+    .details-nav {
+        font-size: 0.75rem;
+    }
+
+    .overview-objectives {
+        font-size: 0.75rem;
+    }
+
+    .participant {
+        font-size: 0.75rem;
+    }
+
+    .bar {
+        font-size: 0.75rem;
+    }
+
+    .charts-select-holder {
+        font-size: 0.75rem;
+    }
+}
+
+@media all and (max-width: 720px) {
+    .details-layout {
+        flex-direction: column;
+    }
+
+    .details-nav {
+        flex-direction: row;
+    }
+
+    .objectives-icon, .objectives-big-icon {
+        font-size: 0.75rem;
+    }
+
+    .overview-teams {
+        flex-direction: column;
+    }
+}

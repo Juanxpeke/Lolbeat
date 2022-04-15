@@ -1,0 +1,22 @@
+# Turn on the rewrite engine
+
+RewriteEngine On
+
+# Default HTTPS page
+
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Change for prettier URLs
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^.*\.(css|js|jpg|png|gif)$ [NC]
+RewriteRule ^([^/]+)/([^/]+)$ profile.html [L]
+
+RewriteRule ^home$ index.html [L]
+RewriteRule ^index\.(php|html?)$ http://www.lolbeat.com/ [L,R=301]
+
+# Enable CGI scripts
+
+Options +ExecCGI
+AddHandler cgi-script .py .pl .cgi

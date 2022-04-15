@@ -1,0 +1,267 @@
+body {
+    background-color: var(--back-background-color);
+}
+
+header {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    padding: 0.5rem 1rem;
+    background-color: var(--front-background-color);
+    color: var(--main-text-color);
+}
+
+.title-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.3em;
+    cursor: pointer;
+}
+
+.title-icon {
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.input-layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.name-input {
+    width: 24em;
+    padding: 0.4rem 0.6em;
+    border-top-left-radius: var(--small-radius);
+    border-bottom-left-radius: var(--small-radius);
+}
+
+.go-button {
+    display: block;
+    padding: 0.4rem 1.2em;
+    border-top-right-radius: var(--small-radius);
+    border-bottom-right-radius: var(--small-radius);
+    color: var(--main-text-color);
+    background-color: var(--dark-button-color);
+    transition: var(--fast-transition);
+}
+
+.go-button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.nav-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.platform-select, .language-select {
+    width: 5em;
+    margin-left: -0.3em;
+    padding: 0.4em;
+    border-radius: var(--small-radius);
+    background-color: var(--dark-button-color);
+    color: var(--main-text-color);
+    transition: var(--fast-transition);
+}
+
+.platform-select:hover, .language-select:hover {
+    background-color: var(--button-hover-color);
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+/*
+==================================
+============== MAIN ==============
+==================================
+*/
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: calc(2 * var(--main-padding));
+    min-height: 100vh;
+    margin-top: var(--header-height);
+    padding: var(--main-padding);
+}
+
+
+/*
+==================================
+==========PROFILE LAYOUT==========
+==================================
+*/
+
+.profile-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5em;
+    width: 25%;
+    padding: 1em 1em;
+    border-radius: var(--small-radius);
+    background-color: var(--middle-background-color);
+    color: var(--main-text-color);
+    transition: var(--resize-transition);
+}
+
+.profile-img {
+    display: block;
+    width: 7.2em;
+    height: 7.2em;
+    border-radius: vaR(--small-radius);
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/*
+==================================
+==========ACCOUNT LAYOUT==========
+==================================
+*/
+
+.account-layout {
+    flex-grow: 1; /* After profile, fill up to the end */
+}
+
+.account-nav {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    top: var(--header-height);
+    border-radius: var(--small-radius);
+    background-color: var(--middle-background-color);
+    color: var(--main-text-color);
+}
+
+.account-nav-button:first-child {
+    border-top-left-radius: var(--small-radius);
+    border-bottom-left-radius: var(--small-radius);
+}
+
+.account-nav-button {
+    padding: 0.8rem 2rem;
+    white-space: nowrap;
+    transition: var(--fast-transition);
+    cursor: pointer;
+}
+
+.account-nav-button:hover, .account-nav-button:focus {
+    background-color: var(--front-background-color);
+}
+
+.account-selected-button {
+    background-color: var(--front-background-color);
+}
+
+.account-content {
+    min-height: 80vh;
+    padding-top: calc(1.5 * var(--medium-gap));
+}
+
+/*
+=============================
+===========FOOTER============
+=============================
+*/
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: var(--main-padding);
+    font-size: var(--min-font-size);
+    color: var(--main-text-color);
+}
+
+
+
+/*
+====================================
+===========MEDIA QUERIES============
+====================================
+ */
+
+@media all and (max-width: 1280px) {
+
+    .profile-layout {
+        font-size: var(--min-font-size);
+    }
+
+    .account-nav {
+        font-size: var(--min-font-size);
+    }
+
+    /* account-content or parents must not be responsive,
+    responsiveness is handled internally*/
+    .account-content {
+    }
+
+}
+
+@media all and (max-width: 960px) {
+
+    .name-input {
+        width: 10em;
+    }
+
+    .nav-layout {
+        display: none;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--min-gap);
+        padding: var(--min-gap) 0;
+    }
+
+    .profile-layout {
+        width: auto;
+        border-radius: 0;
+    }
+
+    .profile-img {
+        width: 4.8em;
+        height: 4.8em;
+    }
+
+    .account-nav {
+        border-radius: 0;
+    }
+
+    .account-nav-button:first-child {
+        border-radius: 0;
+    }
+
+    .account-content {
+        padding-top: calc(3 * var(--min-gap));
+    }
+
+    footer {
+        display: none;
+    }
+}
+
+@media all and (max-width: 720px) {
+
+}
